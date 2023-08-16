@@ -1,4 +1,4 @@
-import { Text, View, Image } from "react-native";
+import { Text, View, Image, Pressable } from "react-native";
 import React from "react";
 import { globalStyles } from "../styles/AppStyles";
 import { FlatList } from "react-native";
@@ -41,16 +41,18 @@ const Home = ({ navigation }) => {
 
   const renderProfiles = ({ item }) => {
     return (
-      <View style={globalStyles.profileItem}>
+      <Pressable
+        onPress={() => navigation.navigate("Portfolio", item)}
+        style={globalStyles.profileItem}
+      >
         <Text style={globalStyles.titleText}>{item.name}</Text>
         <Image style={globalStyles.profileImg} source={{ uri: item.img }} />
 
         <View style={globalStyles.infoContainer}>
           <Text style={globalStyles.infos}>{item.country}</Text>
           <Text style={globalStyles.infos}>{item.totalImg}</Text>
-          <Text></Text>
         </View>
-      </View>
+      </Pressable>
     );
   };
 
