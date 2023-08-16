@@ -21,5 +21,7 @@ const styles = StyleSheet.create({
 
     text: {
         color: 'white',
+        fontFamily: 'InriaSans_700Bold_Italic',
+        fontSize: 25
     }
 })
