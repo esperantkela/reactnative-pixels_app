@@ -1,8 +1,5 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import Home from './screens/Home';
-
-import AppLoading from 'expo-app-loading';
+import StackNav from "./routes/HomeStackNav";
+import AppLoading from "expo-app-loading";
 import {
   useFonts,
   InriaSans_300Light,
@@ -11,7 +8,7 @@ import {
   InriaSans_400Regular_Italic,
   InriaSans_700Bold,
   InriaSans_700Bold_Italic,
-} from '@expo-google-fonts/inria-sans';
+} from "@expo-google-fonts/inria-sans";
 
 export default function App() {
   let [fontsLoaded] = useFonts({
@@ -25,11 +22,7 @@ export default function App() {
 
   if (!fontsLoaded) {
     return <AppLoading />;
-  }else{
-    return (
-      <Home/>
-    );
+  } else {
+    return <StackNav />;
   }
 }
-
-
