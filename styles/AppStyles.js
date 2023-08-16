@@ -34,4 +34,9 @@ export const globalStyles = StyleSheet.create({
     height: 300,
     borderRadius: 14,
   },
+
+  text: {
+    fontSize: 25,
+    fontFamily: "InriaSans_700Bold_Italic",
+  },
 });
