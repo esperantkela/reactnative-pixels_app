@@ -12,4 +12,10 @@ const Portfolio = ({ navigation }) => {
   );
 };
 
+Portfolio.navigationOptions = {
+  headerTitle: () => {
+    navigation.getParam("name");
+  },
+};
+
 export default Portfolio;
