@@ -20,7 +20,7 @@ Portfolio.navigationOptions = (navigationData) => {
   const favColor = navigationData.navigation.getParam("favColor");
 
   return {
-    title: `Profile de ${name}`,
+    headerTitle: `Profile de ${name}`,
     headerStyle: {
       backgroundColor: favColor,
     },

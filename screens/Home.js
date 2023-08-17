@@ -1,8 +1,8 @@
-import { Text, View, Image, Pressable } from "react-native";
+import { View } from "react-native";
 import React from "react";
 import { globalStyles } from "../styles/AppStyles";
 import { FlatList } from "react-native";
-import Colors from "../styles/Colors";
+import PressableItems from "../components/PressableItems";
 
 const Home = ({ navigation }) => {
   const DATA = [
@@ -46,23 +46,10 @@ const Home = ({ navigation }) => {
 
   const renderProfiles = ({ item }) => {
     return (
-      <Pressable
-        onPress={() => navigation.navigate("Portfolio", item)}
-        style={({ pressed }) => [
-          {
-            backgroundColor: pressed ? Colors.cliked : Colors.white,
-          },
-          globalStyles.profileItem,
-        ]}
-      >
-        <Text style={globalStyles.titleText}>{item.name}</Text>
-        <Image style={globalStyles.profileImg} source={{ uri: item.img }} />
-
-        <View style={globalStyles.infoContainer}>
-          <Text style={globalStyles.infos}>{item.country}</Text>
-          <Text style={globalStyles.infos}>{item.totalImg}</Text>
-        </View>
-      </Pressable>
+      <PressableItems
+        item={item}
+        handleNavigate={() => navigation.navigate("Portfolio", item)}
+      />
     );
   };
 
