@@ -1,3 +1,4 @@
+import { Button } from "react-native";
 import { createStackNavigator } from "react-navigation-stack";
 import { createAppContainer } from "react-navigation";
 import Home from "../screens/Home";
@@ -10,6 +11,13 @@ const screens = {
     screen: Home,
     navigationOptions: {
       title: "Accueil",
+      headerRight: () => (
+        <Button
+          onPress={() => alert("This is a button!")}
+          title="Info"
+          color="blue"
+        />
+      ),
     },
   },
   Photo: {
