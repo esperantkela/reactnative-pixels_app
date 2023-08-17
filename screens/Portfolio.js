@@ -1,6 +1,7 @@
 import { Text, View } from "react-native";
 import React from "react";
 import { globalStyles } from "../styles/AppStyles";
+import Colors from "../styles/Colors";
 
 const Portfolio = ({ navigation }) => {
   return (
@@ -12,10 +13,17 @@ const Portfolio = ({ navigation }) => {
   );
 };
 
-Portfolio.navigationOptions = {
-  headerTitle: () => {
-    navigation.getParam("name");
-  },
-};
-
 export default Portfolio;
+
+Portfolio.navigationOptions = (navigationData) => {
+  const name = navigationData.navigation.getParam("name");
+  const favColor = navigationData.navigation.getParam("favColor");
+
+  return {
+    title: `Profile de ${name}`,
+    headerStyle: {
+      backgroundColor: favColor,
+    },
+    headerTintColor: Colors.white,
+  };
+};
