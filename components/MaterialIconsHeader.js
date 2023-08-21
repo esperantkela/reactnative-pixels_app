@@ -9,7 +9,7 @@ export default function MaterialIconsHeader(props) {
     <HeaderButton
       IconComponent={MaterialIcons}
       {...props}
-      iconSize={23}
+      iconSize={30}
       color={Colors.white}
     />
   );
