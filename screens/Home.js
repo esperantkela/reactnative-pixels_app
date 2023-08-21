@@ -3,6 +3,8 @@ import React from "react";
 import { globalStyles } from "../styles/AppStyles";
 import { FlatList } from "react-native";
 import PressableItems from "../components/PressableItems";
+import { HeaderButtons, Item } from "react-navigation-header-buttons";
+import MaterialIconsHeader from "../components/MaterialIconsHeader";
 
 const Home = ({ navigation }) => {
   const DATA = [
@@ -48,7 +50,7 @@ const Home = ({ navigation }) => {
     return (
       <PressableItems
         item={item}
-        handleNavigate={() => navigation.navigate("Portfolio", item)}
+        handleNavigate={() => navigation.navigate("Home", item)}
       />
     );
   };
@@ -65,3 +67,17 @@ const Home = ({ navigation }) => {
 };
 
 export default Home;
+
+Home.navigationOptions = () => {
+  return {
+    headerLeft: () => (
+      <HeaderButtons HeaderButtonComponent={MaterialIconsHeader}>
+        <Item
+          title="menu"
+          iconName="menu"
+          onPress={() => alert("Menu latéral ")}
+        />
+      </HeaderButtons>
+    ),
+  };
+};

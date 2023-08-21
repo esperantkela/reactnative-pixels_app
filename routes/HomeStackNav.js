@@ -11,13 +11,6 @@ const screens = {
     screen: Home,
     navigationOptions: {
       title: "Accueil",
-      headerRight: () => (
-        <Button
-          onPress={() => alert("This is a button!")}
-          title="Info"
-          color="blue"
-        />
-      ),
     },
   },
   Photo: {
